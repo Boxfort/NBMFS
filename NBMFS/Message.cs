@@ -56,7 +56,7 @@ namespace NBMFS
         }
 
         //Senders for each class of message will be of a different format.
-        public abstract void setSender();
+        public abstract void setSender(string sender);
 
         public string getMessageText()
         {
@@ -64,7 +64,7 @@ namespace NBMFS
         }
 
         //Message texts for each class of message vary in length
-        public abstract void setMessageText();
+        public abstract void setMessageText(string messageText);
 
         #endregion
     }
