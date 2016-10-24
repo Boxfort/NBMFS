@@ -22,6 +22,7 @@ namespace NBMFS
             setMessageID(messageID);
             setMessageBody(body);
 
+            //Readonly values are passed in by inhertied classes in order to re-use code
             MESSAGE_TEXT_LENGTH = messageTextLength;
             SENDER_REGEX = senderRegex;
         }
@@ -63,13 +64,12 @@ namespace NBMFS
 
         public void setSender(string sender)
         {
-            //Regex to check sender validity e.g. S012345678
             Regex regex = new Regex(SENDER_REGEX);
 
             if (!regex.IsMatch(sender))
                 throw new ArgumentException();
 
-            _messageID = sender;
+            _sender = sender;
         }
 
         public string getMessageText()
@@ -77,7 +77,6 @@ namespace NBMFS
             return _messageText;
         }
 
-        //Message texts for each class of message vary in length
         public void setMessageText(string messageText)
         {
             if (messageText.Length > MESSAGE_TEXT_LENGTH)
