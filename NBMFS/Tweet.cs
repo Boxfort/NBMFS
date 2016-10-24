@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NBMFS
 {
-    class Tweet : Message
+    public class Tweet : Message
     {
         public Tweet(string messageID, string body) : base(messageID, body, 128, @"^@[a-zA-Z0-9_]{1,15}") { }
 
