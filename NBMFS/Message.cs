@@ -39,9 +39,7 @@ namespace NBMFS
         public void setMessageID(string messageID)
         {
             //Regex to check ID validity e.g. S012345678
-            Regex regex = new Regex(@"^[SET][0-9]{9}");
-
-            if (!regex.IsMatch(messageID))
+            if (!Regex.IsMatch(messageID, @"^[SET][0-9]{9}"))
                 throw new ArgumentException();
 
             _messageID = messageID;
@@ -64,9 +62,7 @@ namespace NBMFS
 
         public void setSender(string sender)
         {
-            Regex regex = new Regex(SENDER_REGEX);
-
-            if (!regex.IsMatch(sender))
+            if (!Regex.IsMatch(sender, SENDER_REGEX))
                 throw new ArgumentException();
 
             _sender = sender;
