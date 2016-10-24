@@ -8,21 +8,12 @@ namespace NBMFS
 {
     class Email : Message
     {
-        private const int MESSAGE_TEXT_LENGTH = 128;
-
-        public Email(string messageID, String body) : base(messageID, body) { }
+        //Email regex obtained from http://emailregex.com/
+        public Email(string messageID, String body) : base(messageID, body, 1028, @"^[A-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-z0-9](?:[A-z0-9-]*[A-z0-9])?\.)+[A-z0-9](?:[A-z0-9-]*[A-z0-9])?")
+        {
+        }
 
         public override void processMessage()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void setMessageText(string messageText)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void setSender(string sender)
         {
             throw new NotImplementedException();
         }
