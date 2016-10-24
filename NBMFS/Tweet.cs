@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace NBMFS
@@ -27,7 +28,13 @@ namespace NBMFS
 
         public override void setSender(string sender)
         {
-            throw new NotImplementedException();
+            //Regex to check sender validity e.g. S012345678
+            Regex regex = new Regex(@"^@[a-zA-Z0-9_]{1,15}");
+
+            if (!regex.IsMatch(sender))
+                throw new ArgumentException();
+
+            _messageID = sender;
         }
     }
 }
