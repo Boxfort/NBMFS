@@ -9,7 +9,7 @@ namespace NBMFS
 {
     class Tweet : Message
     {
-        public Tweet(string messageID, String body) : base(messageID, body, 128, @"^@[a-zA-Z0-9_]{1,15}") { }
+        public Tweet(string messageID, string body) : base(messageID, body, 128, @"^@[a-zA-Z0-9_]{1,15}") { }
 
         public override void processMessage()
         {
