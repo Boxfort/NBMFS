@@ -19,6 +19,8 @@ namespace NBMFS
             setMessageBody(body);
         }
 
+        public abstract void processMessage();
+
         #region Getters and Setters
 
         public string getMessageID()
