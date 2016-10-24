@@ -1,2 +1,15 @@
 D:\Users\Jack\Source\Repos\TravellingSalesman\NBMFS\NBMFS\bin\Debug\NBMFS.exe.config
 D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\bin\Debug\NBMFS.exe.config
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\bin\Debug\NBMFS.exe
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\bin\Debug\NBMFS.pdb
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS.csprojResolveAssemblyReference.cache
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\MainWindow.g.cs
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\App.g.cs
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS_MarkupCompile.cache
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS_MarkupCompile.lref
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\MainWindow.baml
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS.g.resources
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS.Properties.Resources.resources
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS.csproj.GenerateResource.Cache
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS.exe
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS.pdb
