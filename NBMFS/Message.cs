@@ -14,10 +14,16 @@ namespace NBMFS
         protected string _sender;
         protected string _messageText;
 
-        public Message(string messageID, String body)
+        private readonly int MESSAGE_TEXT_LENGTH;
+        private readonly string SENDER_REGEX;
+
+        public Message(string messageID, String body, int messageTextLength, string senderRegex)
         {
             setMessageID(messageID);
             setMessageBody(body);
+
+            MESSAGE_TEXT_LENGTH = messageTextLength;
+            SENDER_REGEX = senderRegex;
         }
 
         public abstract void processMessage();
@@ -55,8 +61,16 @@ namespace NBMFS
             return _sender;
         }
 
-        //Senders for each class of message will be of a different format.
-        public abstract void setSender(string sender);
+        public void setSender(string sender)
+        {
+            //Regex to check sender validity e.g. S012345678
+            Regex regex = new Regex(SENDER_REGEX);
+
+            if (!regex.IsMatch(sender))
+                throw new ArgumentException();
+
+            _messageID = sender;
+        }
 
         public string getMessageText()
         {
@@ -64,7 +78,13 @@ namespace NBMFS
         }
 
         //Message texts for each class of message vary in length
-        public abstract void setMessageText(string messageText);
+        public void setMessageText(string messageText)
+        {
+            if (messageText.Length > MESSAGE_TEXT_LENGTH)
+                throw new ArgumentException();
+
+            _messageText = messageText;
+        }
 
         #endregion
     }
