@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace NBMFS
@@ -30,7 +31,13 @@ namespace NBMFS
 
         public void setMessageID(string messageID)
         {
-            //Regex to check ID validity. [SET][0-9]{9}
+            //Regex to check ID validity e.g. S012345678
+            Regex regex = new Regex(@"^[SET][0-9]{9}");
+
+            if (!regex.IsMatch(messageID))
+                throw new ArgumentException();
+
+            _messageID = messageID;
         }
 
         public string getMessageBody()
