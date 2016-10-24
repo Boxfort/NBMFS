@@ -11,7 +11,7 @@ namespace NBMFS
     {
         private const int MESSAGE_TEXT_LENGTH = 128;
 
-        Tweet(string messageID, String body) : base(messageID, body) { }
+        public Tweet(string messageID, String body) : base(messageID, body) { }
 
         public override void processMessage()
         {
