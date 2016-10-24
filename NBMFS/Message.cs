@@ -9,10 +9,10 @@ namespace NBMFS
 {
     public abstract class Message
     {
-        private string _messageID;
-        private string _messageBody;
-        private string _sender;
-        private string _messageText;
+        protected string _messageID;
+        protected string _messageBody;
+        protected string _sender;
+        protected string _messageText;
 
         public Message(string messageID, String body)
         {
