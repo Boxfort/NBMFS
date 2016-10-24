@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace NBMFSTests
 {
     [TestClass]
-    public class UnitTest1
+    public class MessageTests
     {
         [TestMethod]
         public void TestMethod1()
