@@ -14,7 +14,7 @@ namespace NBMFS
         private string _sender;
         private string _messageText;
 
-        Message(string messageID, String body)
+        public Message(string messageID, String body)
         {
             setMessageID(messageID);
             setMessageBody(body);
