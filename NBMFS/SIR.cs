@@ -10,10 +10,7 @@ namespace NBMFS
     {
         private Incident _incident;
 
-        public SIR(string messageID, string body, string subject) : base(messageID, body, subject)
-        {
-
-        }
+        public SIR(string messageID, string body, string subject) : base(messageID, body, subject) { }
 
         public override void processMessage()
         {
