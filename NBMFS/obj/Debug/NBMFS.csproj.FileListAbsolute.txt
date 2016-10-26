@@ -13,3 +13,6 @@ D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS.Pro
 D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS.csproj.GenerateResource.Cache
 D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS.exe
 D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS.pdb
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\bin\Debug\NBMFS.exe.config
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS.exe
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS.pdb
