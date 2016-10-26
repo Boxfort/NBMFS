@@ -15,6 +15,11 @@ namespace NBMFS
 
         }
 
+        public override void processMessage()
+        {
+            throw new NotImplementedException();
+        }
+
         public Incident getIncident()
         {
             return _incident;
