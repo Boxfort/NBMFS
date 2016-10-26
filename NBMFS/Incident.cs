@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NBMFS
 {
-    enum Incident
+    public enum Incident
     {
         Theft,
         StaffAttack,
