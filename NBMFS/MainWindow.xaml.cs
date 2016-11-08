@@ -28,7 +28,8 @@ namespace NBMFS
 
         private void btn_insert_Click(object sender, RoutedEventArgs e)
         {
-
+            AddMessage addMessage = new AddMessage();
+            addMessage.ShowDialog();
         }
     }
 }

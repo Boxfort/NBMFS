@@ -36,7 +36,7 @@ namespace NBMFS
             {
                 //Regex to check ID validity e.g. S012345678
                 if (!Regex.IsMatch(value, @"^[SET][0-9]{9}"))
-                    throw new ArgumentException();
+                    throw new ArgumentException("Message ID must be in the format 'S123456789'");
 
                 _messageID = value;
             }
@@ -48,7 +48,23 @@ namespace NBMFS
             set
             {
                 if (!Regex.IsMatch(value, SENDER_REGEX))
-                    throw new ArgumentException();
+                {
+                    string example;
+                    if (this is SMS)
+                    {
+                        example = "+12345678910";
+                    }
+                    else if (this is Tweet)
+                    {
+                        example = "@TwitterUser";
+                    }
+                    else
+                    {
+                        example = "example@example.com";
+                    }
+
+                    throw new ArgumentException("Sender must be in the format '" + example + "'.");
+                }
 
                 _sender = value;
             }
@@ -60,7 +76,7 @@ namespace NBMFS
             set
             {
                 if (value.Length > MESSAGE_TEXT_LENGTH)
-                    throw new ArgumentException();
+                    throw new ArgumentException("Message text must not contain more than "+MESSAGE_TEXT_LENGTH+" characters.");
 
                 _messageText = value;
             }

@@ -55,9 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddMessage.xaml.cs">
+      <DependentUpon>AddMessage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Email.cs" />
+    <Compile Include="Incident.cs" />
+    <Compile Include="SIR.cs" />
     <Compile Include="SMS.cs" />
     <Compile Include="Tweet.cs" />
+    <Page Include="AddMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
