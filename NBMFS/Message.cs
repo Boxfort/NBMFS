@@ -18,13 +18,13 @@ namespace NBMFS
 
         public Message(string messageID, string sender, string messageText, int messageTextLength, string senderRegex)
         {
-            ID = messageID;
-            MessageText = messageText;
-            Sender = sender;
-
             //Readonly values are passed in by inhertied classes in order to re-use code
             MESSAGE_TEXT_LENGTH = messageTextLength;
             SENDER_REGEX = senderRegex;
+
+            ID = messageID;
+            MessageText = messageText;
+            Sender = sender;
         }
 
         #region Getters and Setters

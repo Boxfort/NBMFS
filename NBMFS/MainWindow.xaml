@@ -20,7 +20,7 @@
                             <GridView>
                                 <GridViewColumn Header="ID" Width="80" DisplayMemberBinding="{Binding ID}" />
                                 <GridViewColumn Header="Sender" Width="150" DisplayMemberBinding="{Binding Sender}" />
-                                <GridViewColumn Header="Message" Width="351" DisplayMemberBinding="{Binding Message}" />
+                                <GridViewColumn Header="Message" Width="351" DisplayMemberBinding="{Binding MessageText}" />
                             </GridView>
                         </ListView.View>
                     </ListView>
