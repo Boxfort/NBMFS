@@ -23,9 +23,9 @@ namespace NBMFS
         public override void processMessage()
         {
             //URL Regex obtained from https://gist.github.com/dperini/729294
-            if(Regex.IsMatch("", URL_REGEX))
+            if(Regex.IsMatch(_messageBody, URL_REGEX))
             {
-                //Replace url 
+                //Replace url with <URL Quarantined>
                 //Write url to quarantine list
             }
         }
