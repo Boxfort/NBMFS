@@ -131,6 +131,12 @@ namespace NBMFS {
             return;
             case 2:
             this.btn_insert = ((System.Windows.Controls.Button)(target));
+            
+            #line 13 "..\..\MainWindow.xaml"
+            this.btn_insert.Click += new System.Windows.RoutedEventHandler(this.btn_insert_Click);
+            
+            #line default
+            #line hidden
             return;
             case 3:
             this.btn_load = ((System.Windows.Controls.Button)(target));

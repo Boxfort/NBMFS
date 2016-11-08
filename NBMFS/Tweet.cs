@@ -9,11 +9,8 @@ namespace NBMFS
 {
     public class Tweet : Message
     {
-        public Tweet(string messageID, string body) : base(messageID, body, 128, @"^@[a-zA-Z0-9_]{1,15}") { }
-
-        public override void processMessage()
+        public Tweet(string messageID, string sender, string messageText) : base(messageID, sender, messageText, 128, @"^@[a-zA-Z0-9_]{1,15}")
         {
-            throw new NotImplementedException();
         }
     }
 }

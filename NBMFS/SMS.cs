@@ -8,13 +8,8 @@ namespace NBMFS
 {
     class SMS : Message
     {
-        public SMS(string messageID, string body) : base(messageID, body, 140, @"^\+[0-9]{11,13}")
+        public SMS(string messageID, string sender, string messageText) : base(messageID, sender, messageText, 140, @"^\+[0-9]{11,13}")
         {
-        }
-
-        public override void processMessage()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -25,5 +25,10 @@ namespace NBMFS
             InitializeComponent();
             list_messages.Items.Add(new SMS("S123456789", "hello"));
         }
+
+        private void btn_insert_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

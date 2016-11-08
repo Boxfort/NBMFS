@@ -10,7 +10,7 @@
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" TabStripPlacement="Left">
             <TabItem Header="Messages" Margin="-2,-2,-2,2">
                 <Grid Background="#FFE5E5E5">
-                    <Button x:Name="btn_insert" Content="Insert" HorizontalAlignment="Left" Margin="607,10,0,0" VerticalAlignment="Top" Width="76"/>
+                    <Button x:Name="btn_insert" Content="Insert" HorizontalAlignment="Left" Margin="607,10,0,0" VerticalAlignment="Top" Width="76" Click="btn_insert_Click"/>
                     <Button x:Name="btn_load" Content="Load" HorizontalAlignment="Left" Margin="607,35,0,0" VerticalAlignment="Top" Width="75"/>
                     <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="608,60,0,0" VerticalAlignment="Top" Width="75"/>
                     <Button x:Name="btn_view" Content="View" HorizontalAlignment="Left" Margin="607,85,0,0" VerticalAlignment="Top" Width="74"/>
