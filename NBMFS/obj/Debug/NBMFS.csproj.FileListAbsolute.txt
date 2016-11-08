@@ -16,3 +16,14 @@ D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\NBMFS.pdb
 C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\bin\Debug\NBMFS.exe.config
 C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS.exe
 C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS.pdb
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS.csprojResolveAssemblyReference.cache
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\MainWindow.g.cs
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\App.g.cs
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS_MarkupCompile.cache
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS_MarkupCompile.lref
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\bin\Debug\NBMFS.exe
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\bin\Debug\NBMFS.pdb
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\MainWindow.baml
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS.g.resources
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS.Properties.Resources.resources
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS.csproj.GenerateResource.Cache

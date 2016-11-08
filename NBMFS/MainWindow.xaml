@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NBMFS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
-        
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" TabStripPlacement="Left">
+            <TabItem Header="Messages" Margin="-2,-2,-2,2">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="btn_insert" Content="Insert" HorizontalAlignment="Left" Margin="607,10,0,0" VerticalAlignment="Top" Width="76"/>
+                    <Button x:Name="btn_load" Content="Load" HorizontalAlignment="Left" Margin="607,35,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="608,60,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="btn_view" Content="View" HorizontalAlignment="Left" Margin="607,85,0,0" VerticalAlignment="Top" Width="74"/>
+                    <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="608,110,0,0" VerticalAlignment="Top" Width="75"/>
+                    <ListView x:Name="list_messages" HorizontalAlignment="Left" Height="523" Margin="10,10,0,0" VerticalAlignment="Top" Width="586" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" Width="80" DisplayMemberBinding="{Binding ID}" />
+                                <GridViewColumn Header="Sender" Width="150" DisplayMemberBinding="{Binding Sender}" />
+                                <GridViewColumn Header="Message" Width="351" DisplayMemberBinding="{Binding Message}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Twitter">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Incidents">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Quarantine">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>

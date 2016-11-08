@@ -19,8 +19,8 @@ namespace NBMFS
 
         public Message(string messageID, String body, int messageTextLength, string senderRegex)
         {
-            setMessageID(messageID);
-            setMessageBody(body);
+            this.ID = messageID;
+            this.MessageBody = body;
 
             //Readonly values are passed in by inhertied classes in order to re-use code
             MESSAGE_TEXT_LENGTH = messageTextLength;
@@ -31,54 +31,47 @@ namespace NBMFS
 
         #region Getters and Setters
 
-        public string getMessageID()
+        public string ID
         {
-            return _messageID;
+            get { return _messageID; }
+            set
+            {
+                //Regex to check ID validity e.g. S012345678
+                if (!Regex.IsMatch(value, @"^[SET][0-9]{9}"))
+                    throw new ArgumentException();
+
+                _messageID = value;
+            }
         }
 
-        public void setMessageID(string messageID)
+        public string MessageBody
         {
-            //Regex to check ID validity e.g. S012345678
-            if (!Regex.IsMatch(messageID, @"^[SET][0-9]{9}"))
-                throw new ArgumentException();
-
-            _messageID = messageID;
+            get { return _messageBody; }
+            set { _messageBody = value; }
         }
 
-        public string getMessageBody()
+        public string Sender
         {
-            return _messageBody;
+            get { return _sender; }
+            set
+            {
+                if (!Regex.IsMatch(value, SENDER_REGEX))
+                    throw new ArgumentException();
+
+                _sender = value;
+            }
         }
 
-        public void setMessageBody(string body)
+        public string MessageText
         {
-            _messageBody = body;
-        }
+            get { return _messageText; }
+            set
+            {
+                if (value.Length > MESSAGE_TEXT_LENGTH)
+                    throw new ArgumentException();
 
-        public string getSender()
-        {
-            return _sender;
-        }
-
-        public void setSender(string sender)
-        {
-            if (!Regex.IsMatch(sender, SENDER_REGEX))
-                throw new ArgumentException();
-
-            _sender = sender;
-        }
-
-        public string getMessageText()
-        {
-            return _messageText;
-        }
-
-        public void setMessageText(string messageText)
-        {
-            if (messageText.Length > MESSAGE_TEXT_LENGTH)
-                throw new ArgumentException();
-
-            _messageText = messageText;
+                _messageText = value;
+            }
         }
 
         #endregion

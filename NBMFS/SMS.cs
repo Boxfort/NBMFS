@@ -8,7 +8,7 @@ namespace NBMFS
 {
     class SMS : Message
     {
-        public SMS(string messageID, string body, int messageTextLength, string senderRegex) : base(messageID, body, 140, @"^\+[0-9]{11,13}")
+        public SMS(string messageID, string body) : base(messageID, body, 140, @"^\+[0-9]{11,13}")
         {
         }
 

@@ -23,6 +23,7 @@ namespace NBMFS
         public MainWindow()
         {
             InitializeComponent();
+            list_messages.Items.Add(new SMS("S123456789", "hello"));
         }
     }
 }
