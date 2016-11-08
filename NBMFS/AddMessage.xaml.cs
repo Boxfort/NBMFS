@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace NBMFS
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddMessage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddMessage : Window
     {
-        public MainWindow()
+        public AddMessage()
         {
             InitializeComponent();
-            list_messages.Items.Add(new Tweet("S123456789", "@JackAndHerSon", "This is a tweet"));
-        }
-
-        private void btn_insert_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
