@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,9 +30,8 @@ namespace NBMFS
         private void btn_insert_Click(object sender, RoutedEventArgs e)
         {
             AddMessage addMessage = new AddMessage();
-            bool? result = addMessage.ShowDialog();
 
-            if (result == true)
+            if (addMessage.ShowDialog() == true)
             {
                 list_messages.Items.Add(addMessage.getMessage());
             }
@@ -44,6 +44,19 @@ namespace NBMFS
             if (MessageBox.Show("Are you sure you wish to clear all messages?", "Alert", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 list_messages.Items.Clear();
+            }
+        }
+
+        private void btn_load_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            if (dialog.ShowDialog() == true)
+            {
+                System.IO.StreamReader sr = new
+                System.IO.StreamReader(dialog.FileName);
+                MessageBox.Show(sr.ReadToEnd());
+                sr.Close();
             }
         }
     }

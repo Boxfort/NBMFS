@@ -11,7 +11,7 @@
             <TabItem Header="Messages" Margin="-2,-2,-2,2">
                 <Grid Background="#FFE5E5E5">
                     <Button x:Name="btn_insert" Content="Insert" HorizontalAlignment="Left" Margin="607,10,0,0" VerticalAlignment="Top" Width="76" Click="btn_insert_Click"/>
-                    <Button x:Name="btn_load" Content="Load" HorizontalAlignment="Left" Margin="607,35,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="btn_load" Content="Load" HorizontalAlignment="Left" Margin="607,35,0,0" VerticalAlignment="Top" Width="75" Click="btn_load_Click"/>
                     <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="608,60,0,0" VerticalAlignment="Top" Width="75"/>
                     <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="607,86,0,0" VerticalAlignment="Top" Width="75" Click="btn_clear_Click"/>
                     <ListView x:Name="list_messages" HorizontalAlignment="Left" Height="523" Margin="10,10,0,0" VerticalAlignment="Top" Width="586" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
