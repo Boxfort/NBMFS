@@ -13,8 +13,10 @@ namespace NBMFS
         protected string _sender;
         protected string _messageText;
 
-        private readonly int MESSAGE_TEXT_LENGTH;
-        private readonly string SENDER_REGEX;
+        protected const string TEXTWORDS_URL = @"../../textwords.csv";
+
+        protected readonly int MESSAGE_TEXT_LENGTH;
+        protected readonly string SENDER_REGEX;
 
         public Message(string messageID, string sender, string messageText, int messageTextLength, string senderRegex)
         {

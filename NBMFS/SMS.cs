@@ -10,8 +10,6 @@ namespace NBMFS
 {
     class SMS : Message
     {
-        private const string TEXTWORDS_URL = @"../../textwords.csv";
-
         public SMS(string messageID, string sender, string messageText) : base(messageID, sender, messageText, 140, @"^\+[0-9]{11,13}")
         {
             ProcessMessage();
@@ -31,8 +29,6 @@ namespace NBMFS
                     return m.Value + " <" + words[1] + ">";
                 }, RegexOptions.IgnoreCase);
             }
-
-            Console.WriteLine(_messageText);
         }
     }
 }
