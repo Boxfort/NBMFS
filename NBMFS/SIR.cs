@@ -11,9 +11,7 @@ namespace NBMFS
     [DataContract]
     public class SIR : Email
     {
-        [DataMember]
         private Incident _incident;
-        [DataMember]
         private string _sortCode;
         private const string SUBJECT_REGEX = @"^SIR [0-9]{2}\/[0-9]{2}\/[0-9]{2}";
         private const string SORTCODE_REGEX = @"^[0-9]{2}-[0-9]{2}-[0-9]{2}";
@@ -51,6 +49,7 @@ namespace NBMFS
 
         #region getters and setters
 
+        [DataMember]
         public string SortCode
         {
             get { return _sortCode; }
@@ -63,6 +62,7 @@ namespace NBMFS
             }
         }
 
+        [DataMember]
         public Incident Incident
         {
             get { return _incident; }

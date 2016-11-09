@@ -11,9 +11,7 @@ namespace NBMFS
     [DataContract]
     public class Email : Message
     {
-        [DataMember]
         protected string _subject;
-        [DataMember]
         private List<string> _URLs = new List<string>();
 
         protected const int SUBJECT_LENGTH = 20;
@@ -26,6 +24,7 @@ namespace NBMFS
             ProcessMessage();
         }
 
+        [DataMember]
         public string Subject
         {
             get { return _subject; }

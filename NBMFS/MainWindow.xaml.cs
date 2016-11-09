@@ -59,5 +59,14 @@ namespace NBMFS
                 sr.Close();
             }
         }
+
+        private void btn_save_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(Message m in list_messages.Items)
+            {
+                Console.WriteLine(JSONHelper.JsonSerializer(m));
+            }
+            
+        }
     }
 }

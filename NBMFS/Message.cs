@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 namespace NBMFS
 {
     [DataContract]
+    [KnownType(typeof(SMS))]
+    [KnownType(typeof(Tweet))]
+    [KnownType(typeof(Email))]
+    [KnownType(typeof(SIR))]
     public abstract class Message
-    {
-        [DataMember]
+    { 
         protected string _messageID;
-        [DataMember]
         protected string _sender;
-        [DataMember]
         protected string _messageText;
 
         protected const string TEXTWORDS_URL = @"../../textwords.csv";
@@ -38,6 +39,7 @@ namespace NBMFS
 
         #region Getters and Setters
 
+        [DataMember]
         public string ID
         {
             get { return _messageID; }
@@ -51,6 +53,7 @@ namespace NBMFS
             }
         }
 
+        [DataMember]
         public string Sender
         {
             get { return _sender; }
@@ -79,6 +82,7 @@ namespace NBMFS
             }
         }
 
+        [DataMember]
         public string MessageText
         {
             get { return _messageText; }
