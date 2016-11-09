@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace NBMFS
 {
+    [DataContract]
     public class SIR : Email
     {
+        [DataMember]
         private Incident _incident;
+        [DataMember]
         private string _sortCode;
         private const string SUBJECT_REGEX = @"^SIR [0-9]{2}\/[0-9]{2}\/[0-9]{2}";
         private const string SORTCODE_REGEX = @"^[0-9]{2}-[0-9]{2}-[0-9]{2}";

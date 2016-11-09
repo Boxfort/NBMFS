@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace NBMFS
 {
+    [DataContract]
     public class Email : Message
     {
+        [DataMember]
         protected string _subject;
+        [DataMember]
         private List<string> _URLs = new List<string>();
 
         protected const int SUBJECT_LENGTH = 20;

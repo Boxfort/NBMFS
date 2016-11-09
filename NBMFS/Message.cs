@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace NBMFS
 {
+    [DataContract]
     public abstract class Message
     {
+        [DataMember]
         protected string _messageID;
+        [DataMember]
         protected string _sender;
+        [DataMember]
         protected string _messageText;
 
         protected const string TEXTWORDS_URL = @"../../textwords.csv";
