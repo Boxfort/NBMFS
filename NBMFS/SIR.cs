@@ -45,6 +45,8 @@ namespace NBMFS
             Incident = incident;
         }
 
+        #region getters and setters
+
         public string SortCode
         {
             get { return _sortCode; }
@@ -75,10 +77,6 @@ namespace NBMFS
             }
         }
 
-        public Incident IncendentType
-        {
-            get { return _incident; }
-            set { _incident = value; }
-        }
+        #endregion
     }
 }

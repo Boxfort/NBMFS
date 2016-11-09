@@ -11,5 +11,10 @@ namespace NBMFS
         public SMS(string messageID, string sender, string messageText) : base(messageID, sender, messageText, 140, @"^\+[0-9]{11,13}")
         {
         }
+
+        protected override void processMessage()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

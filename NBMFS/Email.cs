@@ -31,5 +31,10 @@ namespace NBMFS
                 _subject = value;
             }
         }
+
+        protected override void processMessage()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
