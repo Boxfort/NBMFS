@@ -28,7 +28,7 @@ namespace NBMFS
             set
             {
                 if (value.Length > SUBJECT_LENGTH)
-                    throw new ArgumentException("Subject must not contain more than "+SUBJECT_LENGTH+" characters.");
+                    throw new ArgumentException("Subject must not contain more than " + SUBJECT_LENGTH + " characters.");
 
                 _subject = value;
             }

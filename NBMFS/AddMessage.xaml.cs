@@ -56,29 +56,9 @@ namespace NBMFS
         {
             try
             {
-                if (txt_id.Text.ToUpper().Contains("S"))
-                {
-                    _message = new SMS(txt_id.Text, txt_sender.Text, txt_message.Text);
-                }
-                else if (txt_id.Text.ToUpper().Contains("E"))
-                {
-                    if(txt_subject.Text.Length > 3 && txt_subject.Text.Trim().Substring(0,3).ToUpper() == "SIR")
-                    {
-                        _message = new SIR(txt_id.Text, txt_sender.Text, txt_message.Text, txt_subject.Text);
-                    }
-                    else
-                    {
-                        _message = new Email(txt_id.Text, txt_sender.Text, txt_message.Text, txt_subject.Text);
-                    }
-                }
-                else if (txt_id.Text.ToUpper().Contains("T"))
-                {
-                    _message = new Tweet(txt_id.Text, txt_sender.Text, txt_message.Text);
-                }
-                else
-                {
-                    throw new ArgumentException("Invalid ID Format");
-                }
+                MessageFactory mf = new MessageFactory();
+
+                _message = mf.CreateMessage(txt_id.Text, txt_sender.Text, txt_message.Text.Trim(), txt_subject.Text);
 
                 DialogResult = true;
             }
