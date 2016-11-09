@@ -13,19 +13,17 @@ namespace NBMFSTests
         {
             //arrange
             string messageID = "T012345678";
-            string body = "Testing message body";
+            string messageText = "Testing message body";
+            string sender = "@Sender";
 
             try
             {
-                Tweet tweet = new Tweet(messageID, body);
+                Tweet tweet = new Tweet(messageID, sender, messageText);
             }
             catch(ArgumentException ex)
             {
                 Assert.Fail("Exception thrown :" + ex.Message);
             }
-
-            //assert
-            
         }
 
         [TestMethod]
@@ -35,8 +33,9 @@ namespace NBMFSTests
             //arrange
             string messageID = "Invalid";
             string body = "Testing message body";
+            string sender = "@Sender";
 
-            Tweet tweet = new Tweet(messageID, body);
+            Tweet tweet = new Tweet(messageID, sender, body);
 
             //assert
             Assert.Fail("No exception thrown");
