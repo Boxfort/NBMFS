@@ -70,6 +70,7 @@ namespace NBMFS
 
         private void btn_cancel_Click(object sender, RoutedEventArgs e)
         {
+            DialogResult = false;
         }
     }
 }

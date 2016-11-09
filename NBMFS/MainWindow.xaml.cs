@@ -38,5 +38,13 @@ namespace NBMFS
 
             addMessage.Close();
         }
+
+        private void btn_clear_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you wish to clear all messages?", "Alert", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                list_messages.Items.Clear();
+            }
+        }
     }
 }
