@@ -27,7 +27,7 @@ namespace NBMFS
             Sender = sender;
         }
 
-        protected abstract void processMessage();
+        protected abstract void ProcessMessage();
 
         #region Getters and Setters
 

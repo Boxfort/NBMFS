@@ -13,7 +13,7 @@ namespace NBMFS
         {
         }
 
-        protected override void processMessage()
+        protected override void ProcessMessage()
         {
             throw new NotImplementedException();
         }

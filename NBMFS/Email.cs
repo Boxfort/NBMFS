@@ -19,7 +19,7 @@ namespace NBMFS
         public Email(string messageID, string sender, string messageText, string subject) : base(messageID, sender, messageText, 1028, @"^[A-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[A-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[A-z0-9](?:[A-z0-9-]*[A-z0-9])?\.)+[A-z0-9](?:[A-z0-9-]*[A-z0-9])?")
         {
             Subject = subject;
-            processMessage();
+            ProcessMessage();
         }
 
         public string Subject
@@ -34,7 +34,7 @@ namespace NBMFS
             }
         }
 
-        protected override void processMessage()
+        protected override void ProcessMessage()
         {
             foreach (Match m in Regex.Matches(_messageText, URL_REGEX))
             {

@@ -20,7 +20,7 @@ namespace NBMFS
             ProcessMessage();
         }
 
-        private void ProcessMessage()
+        protected override void ProcessMessage()
         {
             _messageText = _messageText.Trim();
 
