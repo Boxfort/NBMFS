@@ -62,7 +62,7 @@ namespace NBMFS
                 }
                 else if (txt_id.Text.ToUpper().Contains("E"))
                 {
-                    if(txt_subject.Text.Trim().Substring(0,3).ToUpper() == "SIR")
+                    if(txt_subject.Text.Length > 3 && txt_subject.Text.Trim().Substring(0,3).ToUpper() == "SIR")
                     {
                         _message = new SIR(txt_id.Text, txt_sender.Text, txt_message.Text, txt_subject.Text);
                     }
