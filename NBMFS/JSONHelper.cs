@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Json;
 using System.IO;
+using System.Reflection;
 
 namespace NBMFS
 {
@@ -20,12 +21,14 @@ namespace NBMFS
             return jsonString;
         }
 
-        public static T JsonDeserialize<T>(string jsonString)
+        public static string[] JsonDeserializeToArray(string jsonString)
         {
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(T));
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(string[]);
             MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(jsonString));
-            T obj = (T)ser.ReadObject(ms);
+            string[] obj = (string[]) ser.ReadObject(ms);
+            Console.WriteLine(obj);
             return obj;
         }
+
     }
 }

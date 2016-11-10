@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,18 +56,33 @@ namespace NBMFS
             {
                 System.IO.StreamReader sr = new
                 System.IO.StreamReader(dialog.FileName);
-                MessageBox.Show(sr.ReadToEnd());
+                while (!sr.EndOfStream)
+                {
+                    string messageString = sr.ReadLine();
+
+                    Message message = JSONHelper.JsonDeserialize<Message>(messageString);
+                    list_messages.Items.Add(message);
+                }
+
                 sr.Close();
             }
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            foreach(Message m in list_messages.Items)
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            if (dialog.ShowDialog() == true)
             {
-                Console.WriteLine(JSONHelper.JsonSerializer(m));
-            }
-            
+                StreamWriter sw = new StreamWriter(dialog.FileName);
+                foreach (Message m in list_messages.Items)
+                {
+                    sw.WriteLine(JSONHelper.JsonSerializer(m));
+                }
+
+                sw.Flush();
+                sw.Close();
+            } 
         }
     }
 }
