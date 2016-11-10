@@ -52,29 +52,55 @@ namespace NBMFS
         private void btn_load_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
+            bool messageError = false;
+            dialog.Filter = "JSON Files|*.json";
 
             if (dialog.ShowDialog() == true)
             {
-                System.IO.StreamReader sr = new
-                System.IO.StreamReader(dialog.FileName);
-                while (!sr.EndOfStream)
+                try
                 {
-                    string messageString = sr.ReadLine();
+                    StreamReader sr = new StreamReader(dialog.FileName);
+                    list_messages.Items.Clear();
 
-                    Message message = JSONHelper.JsonDeserialize<Message>(messageString);
-                    list_messages.Items.Add(message);
+                    while (!sr.EndOfStream)
+                    {
+                        string messageString = sr.ReadLine();
+
+                        try
+                        {
+                            Message message = JSONHelper.JsonDeserialize<Message>(messageString);
+                            list_messages.Items.Add(message);
+                        }
+                        catch(Exception ex)
+                        {
+                            messageError = true;
+                        }
+                    }
+
+                    sr.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Cannot read file.", "Error.", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
-                sr.Close();
+                if(messageError)
+                    MessageBox.Show("There was a problem reading some messages.", "Error.", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "JSON Files|*.json";
+            dialog.AddExtension = true;
+            dialog.DefaultExt = ".json";
 
             if (dialog.ShowDialog() == true)
             {
+                if (!File.Exists(dialog.FileName))
+                    File.Create(dialog.FileName);
+
                 StreamWriter sw = new StreamWriter(dialog.FileName);
                 foreach (Message m in list_messages.Items)
                 {
