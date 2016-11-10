@@ -47,5 +47,12 @@ namespace NBMFS
 
             Console.WriteLine(_messageText); 
         }
+
+        [DataMember]
+        public List<string> URLs
+        {
+            get { return _URLs; }
+            set { _URLs = value; }
+        }
     }
 }
