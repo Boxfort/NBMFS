@@ -29,3 +29,5 @@ C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS.
 C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\NBMFS.csproj.GenerateResource.Cache
 C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\AddMessage.g.cs
 C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\AddMessage.baml
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\AddMessage.g.cs
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\AddMessage.baml
