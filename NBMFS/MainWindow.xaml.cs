@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -60,7 +61,11 @@ namespace NBMFS
                 {
                     string messageString = sr.ReadLine();
 
-                    Message message = JSONHelper.JsonDeserialize<Message>(messageString);
+                    Message message = JsonConvert.DeserializeObject(messageString, typeof(Message),
+                                                                        new JsonSerializerSettings
+                                                                        {
+                                                                            TypeNameHandling = TypeNameHandling.Objects
+                                                                        });
                     list_messages.Items.Add(message);
                 }
 
