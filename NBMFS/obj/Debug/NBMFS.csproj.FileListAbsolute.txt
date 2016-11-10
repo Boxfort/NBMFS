@@ -31,3 +31,5 @@ C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\AddMes
 C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\AddMessage.baml
 D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\AddMessage.g.cs
 D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\AddMessage.baml
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\bin\Debug\Newtonsoft.Json.dll
+D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\bin\Debug\Newtonsoft.Json.xml

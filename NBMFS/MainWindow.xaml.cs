@@ -61,11 +61,7 @@ namespace NBMFS
                 {
                     string messageString = sr.ReadLine();
 
-                    Message message = JsonConvert.DeserializeObject(messageString, typeof(Message),
-                                                                        new JsonSerializerSettings
-                                                                        {
-                                                                            TypeNameHandling = TypeNameHandling.Objects
-                                                                        });
+                    Message message = JSONHelper.JsonDeserialize<Message>(messageString);
                     list_messages.Items.Add(message);
                 }
 

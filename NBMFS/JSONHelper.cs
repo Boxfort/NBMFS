@@ -6,26 +6,27 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization.Json;
 using System.IO;
 using System.Reflection;
+using Newtonsoft.Json;
 
 namespace NBMFS
 {
     class JSONHelper
     {
+        private static JsonSerializerSettings settings = new JsonSerializerSettings
+        {
+            TypeNameHandling = TypeNameHandling.All
+        };
+
         public static string JsonSerializer<T>(T t)
         {
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(T));
-            MemoryStream ms = new MemoryStream();
-            ser.WriteObject(ms, t);
-            string jsonString = Encoding.UTF8.GetString(ms.ToArray());
-            ms.Close();
+            string jsonString = JsonConvert.SerializeObject(t, settings);
             return jsonString;
         }
 
-        //public static T JsonDeserializeToArray<T>(string jsonString)
-        //{
-            //var obj = JsonConvert.DeserializeObject(jsonString);
-            //return obj;
-        //}
-
+        public static T JsonDeserialize<T>(string jsonString)
+        {
+            T obj = JsonConvert.DeserializeObject<T>(jsonString, settings);
+            return obj;
+        }
     }
 }

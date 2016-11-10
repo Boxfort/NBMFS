@@ -17,7 +17,7 @@
                     <ListView x:Name="list_messages" HorizontalAlignment="Left" Height="523" Margin="10,10,0,0" VerticalAlignment="Top" Width="586" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="ID" Width="80" DisplayMemberBinding="{Binding ID}" />
+                                <GridViewColumn Header="ID" Width="80" DisplayMemberBinding="{Binding MessageID}" />
                                 <GridViewColumn Header="Sender" Width="150" DisplayMemberBinding="{Binding Sender}" />
                                 <GridViewColumn Header="Message" Width="351" DisplayMemberBinding="{Binding MessageText}" />
                             </GridView>

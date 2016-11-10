@@ -30,7 +30,7 @@ namespace NBMFS
             MESSAGE_TEXT_LENGTH = messageTextLength;
             SENDER_REGEX = senderRegex;
 
-            ID = messageID;
+            MessageID = messageID;
             MessageText = messageText;
             Sender = sender;
         }
@@ -40,7 +40,7 @@ namespace NBMFS
         #region Getters and Setters
 
         [DataMember]
-        public string ID
+        public string MessageID
         {
             get { return _messageID; }
             set
