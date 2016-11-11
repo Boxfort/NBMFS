@@ -77,7 +77,7 @@ namespace NBMFS
                 if (!Regex.IsMatch(value, SUBJECT_REGEX))
                     throw new ArgumentException("Significant Incident Report subject must be in the format 'SIR dd/mm/yy'.");
 
-                _sender = value;
+                _subject = value;
             }
         }
 

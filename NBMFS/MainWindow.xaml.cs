@@ -99,7 +99,10 @@ namespace NBMFS
             if (dialog.ShowDialog() == true)
             {
                 if (!File.Exists(dialog.FileName))
-                    File.Create(dialog.FileName);
+                {
+                    var newFile = File.Create(dialog.FileName);
+                    newFile.Close();
+                }
 
                 StreamWriter sw = new StreamWriter(dialog.FileName);
                 foreach (Message m in list_messages.Items)
