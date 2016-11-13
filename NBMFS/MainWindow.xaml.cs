@@ -78,12 +78,7 @@ namespace NBMFS
                             Message message = JSONHelper.JsonDeserialize<Message>(messageString);
                             if (message.GetType() == typeof(Tweet))
                             {
-                                Tweet tweet = (Tweet)message;
-                                foreach(KeyValuePair<string, int> kv in tweet.Hashtags)
-                                {
-                                    list_hastags.Items.Add(new string[] {kv.Key, kv.Value.ToString()});
-
-                                }
+                                addHashtagsAndMentions((Tweet)message);
                                 list_messages.Items.Add(message);
                             }
                             else if (message.GetType() == typeof(SIR))
@@ -112,6 +107,57 @@ namespace NBMFS
 
                 if(messageError)
                     MessageBox.Show("There was a problem reading some messages.", "Error.", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void addHashtagsAndMentions(Tweet tweet)
+        {
+            Dictionary<string, int> hashtags = new Dictionary<string, int>();
+            Dictionary<string, int> mentions = new Dictionary<string, int>();
+ 
+            foreach (KeyValuePair<string, int> kv in tweet.Hashtags)
+            {
+                foreach (ListViewItem item in list_hastags.Items)
+                {
+                    var selectedItem = (dynamic)item;
+                    hashtags.Add(selectedItem.Key, Convert.ToInt32(selectedItem.Value));
+                }
+
+                if (hashtags.ContainsKey(kv.Key))
+                {
+                    hashtags[kv.Key] += kv.Value;
+                }
+                else
+                {
+                    hashtags.Add(kv.Key, kv.Value);
+                }
+            }
+
+            foreach (KeyValuePair<string, int> kv in tweet.Mentions)
+            {
+                foreach (ListViewItem item in list_mentions.Items)
+                {
+                    var selectedItem = (dynamic)item;
+                    mentions.Add(selectedItem.Key, Convert.ToInt32(selectedItem.Value));
+                }
+
+                if (mentions.ContainsKey(kv.Key))
+                {
+                    mentions[kv.Key] += kv.Value;
+                }
+                else
+                {
+                    mentions.Add(kv.Key, kv.Value);
+                }
+            }
+
+            foreach (KeyValuePair<string, int> kv in hashtags)
+            {
+                list_hastags.Items.Add(kv);
+            }
+            foreach (KeyValuePair<string, int> kv in mentions)
+            {
+                list_mentions.Items.Add(kv);
             }
         }
 

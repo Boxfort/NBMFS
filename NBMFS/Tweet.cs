@@ -50,7 +50,7 @@ namespace NBMFS
                 }
             }
 
-            foreach (Match m in Regex.Matches(_messageText, SENDER_REGEX))
+            foreach (Match m in Regex.Matches(_messageText, MENTION_REGEX))
             {
                 if (_mentions.ContainsKey(m.Value))
                 {
@@ -61,6 +61,11 @@ namespace NBMFS
                     _mentions.Add(m.Value, 1);
                 }
             }
+        }
+
+        public Dictionary<string, int> Mentions
+        {
+            get { return _mentions; }
         }
 
         public Dictionary<string, int> Hashtags
