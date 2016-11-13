@@ -26,7 +26,8 @@ namespace NBMFS
         public MainWindow()
         {
             InitializeComponent();
-            list_messages.Items.Add(new Tweet("S123456789", "@JackAndHerSon", "This is a tweet"));
+            btn_save.IsEnabled = false;
+            btn_clear.IsEnabled = false;
         }
 
         private void btn_insert_Click(object sender, RoutedEventArgs e)
@@ -36,6 +37,8 @@ namespace NBMFS
             if (addMessage.ShowDialog() == true)
             {
                 list_messages.Items.Add(addMessage.getMessage());
+                btn_save.IsEnabled = true;
+                btn_clear.IsEnabled = true;
             }
 
             addMessage.Close();
@@ -46,6 +49,8 @@ namespace NBMFS
             if (MessageBox.Show("Are you sure you wish to clear all messages?", "Alert", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 list_messages.Items.Clear();
+                btn_save.IsEnabled = false;
+                btn_clear.IsEnabled = false;
             }
         }
 
@@ -78,6 +83,8 @@ namespace NBMFS
                     }
 
                     sr.Close();
+                    btn_save.IsEnabled = true;
+                    btn_clear.IsEnabled = true;
                 }
                 catch(Exception ex)
                 {
