@@ -12,10 +12,11 @@ namespace NBMFS
     [DataContract]
     public class Tweet : Message
     {
-        private Dictionary<string, int> hashtags = new Dictionary<string, int>();
-        private Dictionary<string, int> mentions = new Dictionary<string, int>();
+        private Dictionary<string, int> _hashtags = new Dictionary<string, int>();
+        private Dictionary<string, int> _mentions = new Dictionary<string, int>();
 
-        private const string HASHTAG_REGEX = @"^#[A-z0-9-_]{1-*}";
+        private const string HASHTAG_REGEX = @"#[A-z0-9-_]+";
+        private const string MENTION_REGEX = @"@[A-z0-9_]{1,15}";
 
         public Tweet(string messageID, string sender, string messageText) : base(messageID, sender, messageText, 128, @"^@[A-z0-9_]{1,15}")
         {
@@ -39,27 +40,33 @@ namespace NBMFS
 
             foreach (Match m in Regex.Matches(_messageText, HASHTAG_REGEX))
             {
-                if (hashtags.ContainsKey(m.Value))
+                if (_hashtags.ContainsKey(m.Value))
                 {
-                    hashtags[m.Value]++;
+                    _hashtags[m.Value]++;
                 }
                 else
                 {
-                    hashtags.Add(m.Value, 1);
+                    _hashtags.Add(m.Value, 1);
                 }
             }
 
             foreach (Match m in Regex.Matches(_messageText, SENDER_REGEX))
             {
-                if (mentions.ContainsKey(m.Value))
+                if (_mentions.ContainsKey(m.Value))
                 {
-                    mentions[m.Value]++;
+                    _mentions[m.Value]++;
                 }
                 else
                 {
-                    mentions.Add(m.Value, 1);
+                    _mentions.Add(m.Value, 1);
                 }
             }
         }
+
+        public Dictionary<string, int> Hashtags
+        {
+            get { return _hashtags; }
+        }
+
     }
 }

@@ -49,6 +49,8 @@ namespace NBMFS
             if (MessageBox.Show("Are you sure you wish to clear all messages?", "Alert", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 list_messages.Items.Clear();
+                list_hastags.Items.Clear();
+                list_mentions.Items.Clear();
                 btn_save.IsEnabled = false;
                 btn_clear.IsEnabled = false;
             }
@@ -74,7 +76,24 @@ namespace NBMFS
                         try
                         {
                             Message message = JSONHelper.JsonDeserialize<Message>(messageString);
-                            list_messages.Items.Add(message);
+                            if (message.GetType() == typeof(Tweet))
+                            {
+                                Tweet tweet = (Tweet)message;
+                                foreach(KeyValuePair<string, int> kv in tweet.Hashtags)
+                                {
+                                    list_hastags.Items.Add(new string[] {kv.Key, kv.Value.ToString()});
+
+                                }
+                                list_messages.Items.Add(message);
+                            }
+                            else if (message.GetType() == typeof(SIR))
+                            {
+                                //Add to significant incidents list
+                            }
+                            else
+                            {
+                                list_messages.Items.Add(message);
+                            }
                         }
                         catch(Exception ex)
                         {

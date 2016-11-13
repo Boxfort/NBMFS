@@ -30,8 +30,8 @@
                     <ListView x:Name="list_hastags" HorizontalAlignment="Left" Height="523" Margin="12,10,0,0" VerticalAlignment="Top" Width="325">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Hashtag" Width="220" DisplayMemberBinding="{Binding Hashtags}" />
-                                <GridViewColumn Header="Count" Width="100" DisplayMemberBinding="{Binding Count}" />
+                                <GridViewColumn Header="Hashtag" Width="220" DisplayMemberBinding="{Binding Key}" />
+                                <GridViewColumn Header="Count" Width="100" DisplayMemberBinding="{Binding Value}" />
                             </GridView>
                         </ListView.View>
                     </ListView>
