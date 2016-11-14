@@ -8,14 +8,14 @@
         Title="ViewMessage" Height="353.597" Width="406.452">
     <Grid>
         <Label x:Name="lbl_ID" Content="Message ID" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.605,-0.538" Margin="6,0,0,0"/>
-        <TextBox x:Name="txt_id" HorizontalAlignment="Left" Height="23" Margin="10,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TextChanged="txt_id_TextChanged"/>
+        <TextBox x:Name="txt_id" HorizontalAlignment="Left" Height="23" Margin="10,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
         <Label x:Name="lbl_Sender" Content="Sender" HorizontalAlignment="Left" Margin="198,0,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_subject" Content="Subject" HorizontalAlignment="Left" Margin="6,54,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txt_sender" HorizontalAlignment="Left" Height="23" Margin="202,26,-90,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
         <TextBox x:Name="txt_subject" HorizontalAlignment="Left" Height="23" Margin="10,80,-90,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="372"/>
         <TextBox x:Name="txt_message" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto" Height="150" Margin="10,134,-90,-14" TextWrapping="Wrap" AcceptsReturn="True"  VerticalAlignment="Top" Width="372"/>
         <Label x:Name="lbl_message" Content="Message Text" HorizontalAlignment="Left" Margin="6,108,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button1" Content="Ok" HorizontalAlignment="Left" Margin="307,292,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" IsDefault="True"/>
+        <Button x:Name="button1" Content="Ok" HorizontalAlignment="Left" Margin="307,292,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" IsDefault="True" Click="button1_Click"/>
 
     </Grid>
 </Window>

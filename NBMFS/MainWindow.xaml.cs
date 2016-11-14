@@ -26,6 +26,7 @@ namespace NBMFS
         public MainWindow()
         {
             InitializeComponent();
+            btn_view.IsEnabled = false;
             btn_save.IsEnabled = false;
             btn_clear.IsEnabled = false;
         }
@@ -55,6 +56,7 @@ namespace NBMFS
                 list_quarantine.Items.Clear();
                 btn_save.IsEnabled = false;
                 btn_clear.IsEnabled = false;
+                btn_view.IsEnabled = false;
             }
         }
 
@@ -206,6 +208,20 @@ namespace NBMFS
                 sw.Flush();
                 sw.Close();
             } 
+        }
+
+        private void btn_view_Click(object sender, RoutedEventArgs e)
+        {
+            if (list_messages.SelectedItem != null)
+            {
+                ViewMessage window = new ViewMessage((Message)list_messages.SelectedItem);
+                window.Show();
+            }
+        }
+
+        private void list_messages_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btn_view.IsEnabled = true;
         }
     }
 }

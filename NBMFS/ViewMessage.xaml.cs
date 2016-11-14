@@ -27,6 +27,10 @@ namespace NBMFS
                 Email email = (Email)message;
                 txt_subject.Text = email.Subject;
             }
+            else
+            {
+                txt_subject.IsEnabled = false;
+            }
                 
             txt_id.Text = message.MessageID;
             txt_message.Text = message.ProcessedMessage;
@@ -36,6 +40,11 @@ namespace NBMFS
             txt_message.IsReadOnly = true;
             txt_sender.IsReadOnly = true;
             txt_subject.IsReadOnly = true;
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
