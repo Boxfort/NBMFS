@@ -19,6 +19,7 @@ namespace NBMFS
         protected string _messageID;
         protected string _sender;
         protected string _messageText;
+        protected string _processedMessage;
 
         protected const string TEXTWORDS_URL = @"../../textwords.csv";
 
@@ -94,6 +95,12 @@ namespace NBMFS
 
                 _messageText = value;
             }
+        }
+
+        
+        public string ProcessedMessage
+        {
+            get { return _processedMessage; }
         }
 
         #endregion

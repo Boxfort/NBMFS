@@ -41,7 +41,7 @@ namespace NBMFS
         {
             foreach (Match m in Regex.Matches(_messageText, URL_REGEX))
             {
-                _messageText = _messageText.Replace(m.Value, "<URL Quarantined>");
+                _processedMessage = _messageText.Replace(m.Value, "<URL Quarantined>");
                 _URLs.Add(m.Value);
             }
 

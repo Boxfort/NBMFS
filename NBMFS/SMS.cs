@@ -26,7 +26,7 @@ namespace NBMFS
                 string[] words = reader.ReadLine().Split(',');
                 string wordRegex = @"\b" + words[0] + @"\b";
 
-                _messageText = Regex.Replace(_messageText, wordRegex, delegate(Match m)
+                _processedMessage = Regex.Replace(_messageText, wordRegex, delegate(Match m)
                 {
                     return m.Value + " <" + words[1] + ">";
                 }, RegexOptions.IgnoreCase);

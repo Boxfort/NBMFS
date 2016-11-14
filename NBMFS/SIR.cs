@@ -24,9 +24,9 @@ namespace NBMFS
 
         protected override void ProcessMessage()
         {
-            _messageText = _messageText.Trim();
+            _processedMessage = _messageText.Trim();
 
-            string[] lines = _messageText.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            string[] lines = _processedMessage.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             //Check that both lines are long enough, and that they conform to the correct format
             if (lines[0].Trim().Length < 8 || lines[0].Trim().Substring(0, 11).ToLower() != "sort code: ") 

@@ -36,7 +36,7 @@ namespace NBMFS
 
             if (addMessage.ShowDialog() == true)
             {
-                list_messages.Items.Add(addMessage.getMessage());
+                insertMessage(addMessage.getMessage());
                 btn_save.IsEnabled = true;
                 btn_clear.IsEnabled = true;
             }
@@ -51,6 +51,8 @@ namespace NBMFS
                 list_messages.Items.Clear();
                 list_hastags.Items.Clear();
                 list_mentions.Items.Clear();
+                list_incidents.Items.Clear();
+                list_quarantine.Items.Clear();
                 btn_save.IsEnabled = false;
                 btn_clear.IsEnabled = false;
             }
@@ -76,21 +78,9 @@ namespace NBMFS
                         try
                         {
                             Message message = JSONHelper.JsonDeserialize<Message>(messageString);
-                            if (message.GetType() == typeof(Tweet))
-                            {
-                                addHashtagsAndMentions((Tweet)message);
-                                list_messages.Items.Add(message);
-                            }
-                            else if (message.GetType() == typeof(SIR))
-                            {
-                                //Add to significant incidents list
-                            }
-                            else
-                            {
-                                list_messages.Items.Add(message);
-                            }
+                            insertMessage(message);
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             messageError = true;
                         }
@@ -107,6 +97,37 @@ namespace NBMFS
 
                 if(messageError)
                     MessageBox.Show("There was a problem reading some messages.", "Error.", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void insertMessage(Message message)
+        {
+            if (message.GetType() == typeof(Tweet))
+            {
+                addHashtagsAndMentions((Tweet)message);
+                list_messages.Items.Add(message);
+            }
+            else if (message.GetType() == typeof(SIR))
+            {
+                list_incidents.Items.Add((SIR)message);
+            }
+            else if (message.GetType() == typeof(Email))
+            {
+                list_messages.Items.Add(message);
+                addQuarantine((Email)message);
+            }
+            else
+            {
+                list_messages.Items.Add(message);
+            }
+        }
+
+        private void addQuarantine(Email email)
+        {
+            foreach(string url in email.URLs)
+            {
+                Tuple<string, string> urlTuple = new Tuple<string, string>(email.MessageID, url);
+                list_quarantine.Items.Add(urlTuple);
             }
         }
 
