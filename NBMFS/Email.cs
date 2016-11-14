@@ -39,9 +39,11 @@ namespace NBMFS
 
         protected override void ProcessMessage()
         {
+            _processedMessage = _messageText;
+
             foreach (Match m in Regex.Matches(_messageText, URL_REGEX))
             {
-                _processedMessage = _messageText.Replace(m.Value, "<URL Quarantined>");
+                _processedMessage = _processedMessage.Replace(m.Value, "<URL Quarantined>");
                 _URLs.Add(m.Value);
             }
 
