@@ -7,14 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" TabStripPlacement="Left">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="682" TabStripPlacement="Left">
             <TabItem Header="Messages" Margin="-2,-2,-2,2">
-                <Grid Background="#FFE5E5E5">
-                    <Button x:Name="btn_insert" Content="Insert" HorizontalAlignment="Left" Margin="607,10,0,0" VerticalAlignment="Top" Width="76" Click="btn_insert_Click"/>
-                    <Button x:Name="btn_load" Content="Load" HorizontalAlignment="Left" Margin="607,35,0,0" VerticalAlignment="Top" Width="75" Click="btn_load_Click"/>
-                    <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="608,60,0,0" VerticalAlignment="Top" Width="75" Click="btn_save_Click"/>
-                    <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="607,86,0,0" VerticalAlignment="Top" Width="75" Click="btn_clear_Click"/>
-                    <ListView x:Name="list_messages" HorizontalAlignment="Left" Height="523" Margin="10,10,0,0" VerticalAlignment="Top" Width="586" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <Grid Background="#FFE5E5E5" HorizontalAlignment="Left" Width="618">
+                    <ListView x:Name="list_messages" HorizontalAlignment="Left" Height="523" Margin="10,10,0,0" VerticalAlignment="Top" Width="582" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="ID" Width="80" DisplayMemberBinding="{Binding MessageID}" />
@@ -52,6 +48,10 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
+        <Button x:Name="btn_insert" Content="Insert" HorizontalAlignment="Left" Margin="702,13,0,0" VerticalAlignment="Top" Width="76" Click="btn_insert_Click"/>
+        <Button x:Name="btn_load" Content="Load" HorizontalAlignment="Left" Margin="702,38,0,0" VerticalAlignment="Top" Width="75" Click="btn_load_Click"/>
+        <Button x:Name="btn_save" Content="Save" HorizontalAlignment="Left" Margin="703,63,0,0" VerticalAlignment="Top" Width="75" Click="btn_save_Click"/>
+        <Button x:Name="btn_clear" Content="Clear" HorizontalAlignment="Left" Margin="702,89,0,0" VerticalAlignment="Top" Width="75" Click="btn_clear_Click"/>
 
     </Grid>
 </Window>
