@@ -19,9 +19,23 @@ namespace NBMFS
     /// </summary>
     public partial class ViewMessage : Window
     {
-        public ViewMessage()
+        public ViewMessage(Message message)
         {
             InitializeComponent();
+            if(message.GetType() == typeof(Email))
+            {
+                Email email = (Email)message;
+                txt_subject.Text = email.Subject;
+            }
+                
+            txt_id.Text = message.MessageID;
+            txt_message.Text = message.ProcessedMessage;
+            txt_sender.Text = message.Sender;
+
+            txt_id.IsReadOnly = true;
+            txt_message.IsReadOnly = true;
+            txt_sender.IsReadOnly = true;
+            txt_subject.IsReadOnly = true;
         }
     }
 }
