@@ -37,3 +37,5 @@ C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\bin\Debug\Newton
 C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\bin\Debug\Newtonsoft.Json.xml
 D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\ViewMessage.g.cs
 D:\Users\Jack\University\Software Engineering CW\NBMFS\NBMFS\obj\Debug\ViewMessage.baml
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\ViewMessage.g.cs
+C:\Users\Jack\Documents\Visual Studio 2015\Projects\NBMFS\NBMFS\obj\Debug\ViewMessage.baml

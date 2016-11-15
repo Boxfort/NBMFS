@@ -49,15 +49,20 @@ namespace NBMFS
         {
             if (MessageBox.Show("Are you sure you wish to clear all messages?", "Alert", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                list_messages.Items.Clear();
-                list_hastags.Items.Clear();
-                list_mentions.Items.Clear();
-                list_incidents.Items.Clear();
-                list_quarantine.Items.Clear();
-                btn_save.IsEnabled = false;
-                btn_clear.IsEnabled = false;
-                btn_view.IsEnabled = false;
+                clearLists();
             }
+        }
+
+        private void clearLists()
+        {
+            list_messages.Items.Clear();
+            list_hastags.Items.Clear();
+            list_mentions.Items.Clear();
+            list_incidents.Items.Clear();
+            list_quarantine.Items.Clear();
+            btn_save.IsEnabled = false;
+            btn_clear.IsEnabled = false;
+            btn_view.IsEnabled = false;
         }
 
         private void btn_load_Click(object sender, RoutedEventArgs e)
@@ -71,7 +76,7 @@ namespace NBMFS
                 try
                 {
                     StreamReader sr = new StreamReader(dialog.FileName);
-                    list_messages.Items.Clear();
+                    clearLists();
 
                     while (!sr.EndOfStream)
                     {
@@ -137,15 +142,19 @@ namespace NBMFS
         {
             Dictionary<string, int> hashtags = new Dictionary<string, int>();
             Dictionary<string, int> mentions = new Dictionary<string, int>();
+
+            list_hastags.Items.Clear();
+            list_mentions.Items.Clear();
  
             foreach (KeyValuePair<string, int> kv in tweet.Hashtags)
             {
-                foreach (ListViewItem item in list_hastags.Items)
+                foreach (KeyValuePair<string, int> item in list_hastags.Items)
                 {
                     var selectedItem = (dynamic)item;
                     hashtags.Add(selectedItem.Key, Convert.ToInt32(selectedItem.Value));
                 }
 
+                //If duplicate then add to count instead of adding new entry
                 if (hashtags.ContainsKey(kv.Key))
                 {
                     hashtags[kv.Key] += kv.Value;
@@ -158,7 +167,7 @@ namespace NBMFS
 
             foreach (KeyValuePair<string, int> kv in tweet.Mentions)
             {
-                foreach (ListViewItem item in list_mentions.Items)
+                foreach (KeyValuePair<string, int> item in list_mentions.Items)
                 {
                     var selectedItem = (dynamic)item;
                     mentions.Add(selectedItem.Key, Convert.ToInt32(selectedItem.Value));
