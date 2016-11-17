@@ -6,7 +6,7 @@ using NBMFS;
 namespace NBMFSTests
 {
     [TestClass]
-    public class MessageTests
+    public class TweetTests
     {
         [TestMethod]
         public void CreateTweet_WithValidID()
