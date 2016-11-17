@@ -232,5 +232,10 @@ namespace NBMFS
         {
             btn_view.IsEnabled = true;
         }
+
+        private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
