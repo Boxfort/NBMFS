@@ -1,26 +1,30 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 using NBMFS;
 
 namespace NBMFSTests
 {
     [TestClass]
-    public class TweetTests
+    class SMSTests
     {
         [TestMethod]
-        public void CreateValidTweet()
+        public void CreateValidSMS()
         {
             //arrange
-            string messageID = "T012345678";
+            string messageID = "S012345678";
             string messageText = "Testing message body";
-            string sender = "@Sender";
+            string sender = "+44111111111";
 
             try
             {
-                Tweet tweet = new Tweet(messageID, sender, messageText);
+                SMS tweet = new SMS(messageID, sender, messageText);
             }
-            catch(ArgumentException ex)
+            catch (ArgumentException ex)
             {
                 Assert.Fail("Exception thrown :" + ex.Message);
             }
@@ -83,32 +87,6 @@ namespace NBMFSTests
             Tweet tweet = new Tweet(messageID, sender, messageText);
 
             Assert.AreEqual("Message with slang LOL <Laughing out loud> more text", tweet.ProcessedMessage);
-        }
-
-        [TestMethod]
-        public void Tweet_Adds_Hashtags_to_List()
-        {
-            //arrange
-            string messageID = "T012345678";
-            string messageText = "Message with a #hashtag";
-            string sender = "@Sender";
-
-            Tweet tweet = new Tweet(messageID, sender, messageText);
-
-            Assert.IsTrue(tweet.Hashtags.ContainsKey("#hashtag"));
-        }
-
-        [TestMethod]
-        public void Tweet_Adds_Mentions_to_List()
-        {
-            //arrange
-            string messageID = "T012345678";
-            string messageText = "Message with a @mention";
-            string sender = "@Sender";
-
-            Tweet tweet = new Tweet(messageID, sender, messageText);
-
-            Assert.IsTrue(tweet.Mentions.ContainsKey("@mention"));
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace NBMFS
 {
     [DataContract]
-    class SMS : Message
+    public class SMS : Message
     {
         public SMS(string messageID, string sender, string messageText) : base(messageID, sender, messageText, 140, @"^\+[0-9]{11,13}")
         {
