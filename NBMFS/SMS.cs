@@ -21,12 +21,14 @@ namespace NBMFS
         {
             StreamReader reader = new StreamReader(File.OpenRead(TEXTWORDS_URL));
 
+            _processedMessage = _messageText;
+
             while (!reader.EndOfStream)
             {
                 string[] words = reader.ReadLine().Split(',');
                 string wordRegex = @"\b" + words[0] + @"\b";
 
-                _processedMessage = Regex.Replace(_messageText, wordRegex, delegate(Match m)
+                _processedMessage = Regex.Replace(_processedMessage, wordRegex, delegate(Match m)
                 {
                     return m.Value + " <" + words[1] + ">";
                 }, RegexOptions.IgnoreCase);

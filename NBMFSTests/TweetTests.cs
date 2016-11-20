@@ -64,7 +64,7 @@ namespace NBMFSTests
             string messageID = "T012345678";
             string messageText = "This is an invalid message tweet because it contains too many characters."
                                 + "This is an invalid message tweet because it contains too many characters.";
-            string sender = "invalid";
+            string sender = "@Sender";
 
             Tweet tweet = new Tweet(messageID, sender, messageText);
 

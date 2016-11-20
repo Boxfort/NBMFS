@@ -1,16 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using NBMFS;
 
 namespace NBMFSTests
 {
     [TestClass]
-    class SMSTests
+    public class SMSTests
     {
         [TestMethod]
         public void CreateValidSMS()
@@ -32,14 +28,14 @@ namespace NBMFSTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void CreateTweet_WithInvalidID()
+        public void CreateSMS_WithInvalidID()
         {
             //arrange
             string messageID = "Invalid";
             string body = "Testing message body";
-            string sender = "@Sender";
+            string sender = "+44111111111";
 
-            Tweet tweet = new Tweet(messageID, sender, body);
+            SMS tweet = new SMS(messageID, sender, body);
 
             //assert
             Assert.Fail("No exception thrown");
@@ -47,10 +43,10 @@ namespace NBMFSTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void CreateTweet_WithInvalidSender()
+        public void CreateSMS_WithInvalidSender()
         {
             //arrange
-            string messageID = "T012345678";
+            string messageID = "S012345678";
             string messageText = "Testing message body";
             string sender = "invalid";
 
@@ -62,29 +58,29 @@ namespace NBMFSTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void CreateTweet_WithInvalidMessageLength()
+        public void CreateSMS_WithInvalidMessageLength()
         {
             //arrange
-            string messageID = "T012345678";
+            string messageID = "S012345678";
             string messageText = "This is an invalid message tweet because it contains too many characters."
                                 + "This is an invalid message tweet because it contains too many characters.";
-            string sender = "invalid";
+            string sender = "+44111111111";
 
-            Tweet tweet = new Tweet(messageID, sender, messageText);
+            SMS tweet = new SMS(messageID, sender, messageText);
 
             //assert
             Assert.Fail("No exception thrown");
         }
 
         [TestMethod]
-        public void Tweet_Expands_Text_Speak()
+        public void SMS_Expands_Text_Speak()
         {
             //arrange
-            string messageID = "T012345678";
+            string messageID = "S012345678";
             string messageText = "Message with slang LOL more text";
-            string sender = "@Sender";
+            string sender = "+44111111111";
 
-            Tweet tweet = new Tweet(messageID, sender, messageText);
+            SMS tweet = new SMS(messageID, sender, messageText);
 
             Assert.AreEqual("Message with slang LOL <Laughing out loud> more text", tweet.ProcessedMessage);
         }
