@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NBMFS
 {
-    class MessageFactory
+    public class MessageFactory
     {
         public Message CreateMessage(string id, string sender, string messageText, string subject = "")
         {

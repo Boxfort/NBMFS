@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="EmailTests.cs" />
+    <Compile Include="MessageFactoryTests.cs" />
     <Compile Include="SMSTests.cs" />
     <Compile Include="TweetTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
