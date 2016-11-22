@@ -5,7 +5,7 @@ using NBMFS;
 namespace NBMFSTests
 {
     [TestClass]
-    class MessageFactoryTests
+    public class MessageFactoryTests
     {
         [TestMethod]
         public void MessageFactory_CreateSMS()
