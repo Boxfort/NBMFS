@@ -8,6 +8,16 @@ namespace NBMFS
 {
     public class MessageFactory
     {
+
+        /// <summary>
+        /// Identifies a message type from ID, and generates a new message using the given information
+        /// </summary>
+        /// <param name="id">Messages ID</param>
+        /// <param name="sender">Who sent the message</param>
+        /// <param name="messageText">The main body of text for the message</param>
+        /// <param name="subject">The subject of an email type message</param>
+        /// <exception cref="System.ArgumentException">thrown when ID is invalid</exception>
+        /// <returns>subclass of type message</returns>
         public Message CreateMessage(string id, string sender, string messageText, string subject = "")
         {
             if (id.ToUpper().Contains("S"))

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NBMFS
 {
+    /// <summary>
+    /// Enumeration containing all types valid types of incident
+    /// </summary>
     public enum Incident
     {
         Theft,
