@@ -17,12 +17,24 @@ namespace NBMFS
             TypeNameHandling = TypeNameHandling.All
         };
 
+        /// <summary>
+        /// Converts an object to a JSON string
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="t"></param>
+        /// <returns>A JSON string</returns>
         public static string JsonSerializer<T>(T t)
         {
             string jsonString = JsonConvert.SerializeObject(t, settings);
             return jsonString;
         }
 
+        /// <summary>
+        /// Converts a JSON string back into an object
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="jsonString"></param>
+        /// <returns>Object of type T</returns>
         public static T JsonDeserialize<T>(string jsonString)
         {
             T obj = JsonConvert.DeserializeObject<T>(jsonString, settings);

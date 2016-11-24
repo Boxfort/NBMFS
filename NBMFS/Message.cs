@@ -26,6 +26,15 @@ namespace NBMFS
         protected readonly int MESSAGE_TEXT_LENGTH;
         protected readonly string SENDER_REGEX;
 
+        /// <summary>
+        /// Base message class
+        /// </summary>
+        /// <param name="messageID">ID of the message, must be in the form 'S123456789'</param>
+        /// <param name="sender">Sender of the message, validity depends on <paramref name="senderRegex"/></param>
+        /// <param name="messageText">Main message body text</param>
+        /// <param name="messageTextLength">Maximum length of <paramref name="messageText"/></param>
+        /// <param name="senderRegex">Regular expression specifying the valid form of sender</param>
+        /// <exception cref="System.ArgumentException"></exception>
         public Message(string messageID, string sender, string messageText, int messageTextLength, string senderRegex)
         {
             //Readonly values are passed in by inhertied classes in order to re-use code
@@ -41,6 +50,7 @@ namespace NBMFS
 
         #region Getters and Setters
 
+        /// <exception cref="System.ArgumentException"></exception>
         [DataMember]
         public string MessageID
         {
@@ -55,6 +65,7 @@ namespace NBMFS
             }
         }
 
+        /// <exception cref="System.ArgumentException"></exception>
         [DataMember]
         public string Sender
         {
@@ -84,6 +95,7 @@ namespace NBMFS
             }
         }
 
+        /// <exception cref="System.ArgumentException"></exception>
         [DataMember]
         public string MessageText
         {

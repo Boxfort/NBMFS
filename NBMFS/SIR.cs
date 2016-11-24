@@ -16,12 +16,24 @@ namespace NBMFS
         private const string SUBJECT_REGEX = @"^SIR [0-9]{2}\/[0-9]{2}\/[0-9]{2}";
         private const string SORTCODE_REGEX = @"^[0-9]{2}-[0-9]{2}-[0-9]{2}";
 
+        /// <summary>
+        /// Significant incident report
+        /// </summary>
+        /// <param name="messageID">Messages id, must be in the form 'E123456789'</param>
+        /// <param name="sender">Messages sender, must be in the form 'example@example.com'</param>
+        /// <param name="messageText">Message body, must be in the form 'Sort Code: 11-11-11 \n Nature Of Incident: IncidentName'</param>
+        /// <param name="subject">Subject of the SIR, must be in the form 'SIR dd/mm/yy'</param>
+        /// <exception cref="System.ArgumentException"></exception>
         public SIR(string messageID, string sender, string messageText, string subject) : base(messageID, sender, messageText, subject)
         {
             Subject = subject;
             ProcessMessage();
         }
 
+        /// <summary>
+        /// Ensures that the messagetext is in the correct format, stores the sortcode and nature of incident
+        /// </summary>
+        /// <exception cref="System.ArgumentException"></exception>
         protected override void ProcessMessage()
         {
             _processedMessage = _messageText.Trim();
@@ -49,6 +61,7 @@ namespace NBMFS
 
         #region getters and setters
 
+        /// <exception cref="System.ArgumentException"></exception>
         [DataMember]
         public string SortCode
         {
@@ -69,6 +82,7 @@ namespace NBMFS
             set { _incident = value; }
         }
 
+        /// <exception cref="System.ArgumentException"></exception>
         public string Subject
         {
             get { return _subject; }
